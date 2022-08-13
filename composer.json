@@ -1,0 +1,9 @@
+{
+    "name": "ahmdsya/php-native-crud",
+    "description": "Simple php native crud with Query Builder.",
+    "type": "project",
+    "require": {
+        "php": ">=7.0",
+        "pecee/pixie": "^4.15"
+    }
+}
