@@ -26,5 +26,5 @@ Install dengan git clone dan kemudian install library query builder dengan compo
 ```
 Kemudian langkah selanjutnya adalah:
 - Buat database baru
-- import file database di folder database/php-native-crud.sql
+- import file database di folder database/php_native_crud.sql
 - Konfigurasi database dari folder constants/constants.php
