@@ -4,22 +4,15 @@ class Prodi extends Database
 {
     private $table = 'prodi';
 
-    public function getData($id = null, $where = [], $first = false)
+    public function getData($id = null, $where = [])
     {
         if ($id != null) {
             $data = $this->db->table($this->table)->find($id);
         }
-        elseif(count($where) > 0){
-            if($first){
-                $data = $this->db->table($this->table)
-                    ->where($where[0], $where[1])
-                    ->first();
-            }
-            else {
-                $data = $this->db->table($this->table)
+        elseif(count($where) == 2){
+            $data = $this->db->table($this->table)
                     ->where($where[0], $where[1])
                     ->get();
-            }
         }
         else{
             $data = $this->db->table($this->table)->get();

@@ -13,15 +13,15 @@
             </div>
             <div class="card-body">
                 <form method="post">
+                    <input type="hidden" name="mode" value="<?= $_GET['mode'] ?>">
+                    <input type="hidden" name="id" value="<?= ($id ? $id : '') ?>">
                     <div class="form-group">
                         <label for="nama_prodi">Nama Prodi</label>
-                        <input type="hidden" name="mode" value="<?= $_GET['mode'] ?>">
-                        <input type="hidden" name="id" value="<?= $id ?>">
                         <input type="text" name="nama_prodi"
                             value="<?= ($id ? $prodi->getData($id)->nama_prodi : '') ?>" class="form-control"
                             id="nama_prodi" style="width: 50%;" placeholder="Masukkan nama prodi" required>
-                        <button type="submit" name="submit" class="btn btn-sm btn-primary mt-3">Submit</button>
                     </div>
+                    <button type="submit" name="submit" class="btn btn-sm btn-primary">Submit</button>
                 </form>
             </div>
         </div>
