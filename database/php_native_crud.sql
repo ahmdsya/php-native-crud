@@ -28,7 +28,9 @@ CREATE TABLE IF NOT EXISTS `mahasiswa` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table php_native_crud.mahasiswa: ~0 rows (approximately)
+/*!40000 ALTER TABLE `mahasiswa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mahasiswa` ENABLE KEYS */;
 
 -- Dumping structure for table php_native_crud.prodi
 CREATE TABLE IF NOT EXISTS `prodi` (
@@ -37,7 +39,11 @@ CREATE TABLE IF NOT EXISTS `prodi` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table php_native_crud.prodi: ~0 rows (approximately)
+/*!40000 ALTER TABLE `prodi` DISABLE KEYS */;
+INSERT INTO `prodi` (`id`, `nama_prodi`) VALUES
+	(2, 'Sistem Informasi');
+/*!40000 ALTER TABLE `prodi` ENABLE KEYS */;
 
 -- Dumping structure for table php_native_crud.user
 CREATE TABLE IF NOT EXISTS `user` (
@@ -48,7 +54,11 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Data exporting was unselected.
+-- Dumping data for table php_native_crud.user: ~0 rows (approximately)
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`id`, `email`, `nama`, `password`) VALUES
+	(1, 'admin@mail.com', 'Administrattor', '$2y$10$qkZc8lcTTLSeQi.M2ynzOOHIkGXy4QUDiKkJi65KRnuB8l5/AX5n6');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
