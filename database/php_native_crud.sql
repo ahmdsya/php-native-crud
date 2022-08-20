@@ -20,13 +20,13 @@ USE `php_native_crud`;
 -- Dumping structure for table php_native_crud.mahasiswa
 CREATE TABLE IF NOT EXISTS `mahasiswa` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `prodi_id` int(11) unsigned NOT NULL DEFAULT '0',
   `nim` varchar(50) NOT NULL DEFAULT '',
   `nama_mahasiswa` varchar(50) NOT NULL DEFAULT '',
   `jk` varchar(50) NOT NULL DEFAULT '',
-  `prodi_id` int(11) unsigned NOT NULL DEFAULT '0',
   `foto` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 
@@ -35,7 +35,18 @@ CREATE TABLE IF NOT EXISTS `prodi` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nama_prodi` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table php_native_crud.user
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) NOT NULL DEFAULT '',
+  `nama` varchar(50) NOT NULL DEFAULT '',
+  `password` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
 

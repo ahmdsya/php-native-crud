@@ -2,6 +2,10 @@
 
     require_once 'core.php';
 
+    if(!$isLogin) {
+        header('Location:login.php');
+    }
+
 ?>
 
 <!DOCTYPE html>

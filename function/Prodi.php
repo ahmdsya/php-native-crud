@@ -4,6 +4,11 @@ class Prodi extends Database
 {
     private $table = 'prodi';
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function getData($id = null, $where = [])
     {
         if ($id != null) {

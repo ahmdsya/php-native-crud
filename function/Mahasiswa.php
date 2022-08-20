@@ -4,6 +4,11 @@ class Mahasiswa extends Database
 {
     protected $table = 'mahasiswa';
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function getData($id = null, $where = [])
     {
         if ($id != null) {

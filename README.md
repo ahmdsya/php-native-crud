@@ -28,3 +28,7 @@ Kemudian langkah selanjutnya adalah:
 - Buat database baru
 - import file database di folder database/php_native_crud.sql
 - Konfigurasi database dari folder constants/constants.php
+
+#### Informasi Login
+- Email = admin@mail.com
+- Password = admin123
