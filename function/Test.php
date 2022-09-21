@@ -2,24 +2,17 @@
 
 class Test extends Database
 {
-    public function cekDB()
+    private $table = 'test';
+
+    public function __construct()
     {
-        $data = $this->db->table('mahasiswa')->count();
-        return  $data;
+        parent::__construct();
     }
 
-    public function createUser()
-    {
-        $data = [
-            'email' => 'admin@mail.com',
-            'nama' => 'Administrattor',
-            'password' => password_hash('admin123', PASSWORD_DEFAULT)
-        ];
-
-        $isnert = $this->db->table('user')->insert($data);
-
-        echo "OK";
-    }
+    // public testFunction()
+    // {
+    //     //
+    // }
 }
 
 $test = new Test();

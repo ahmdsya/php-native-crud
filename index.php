@@ -73,6 +73,9 @@
                             include('pages/mahasiswa/index.php');
                         }
                     }
+                    elseif(isset($_GET['page']) && $_GET['page'] == 'test'){
+                        include('pages/test/index.php');
+                    }
 
                     ?>
 
