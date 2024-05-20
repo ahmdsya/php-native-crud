@@ -21,13 +21,28 @@ jobs:
       - name: Install Dependencies
         run: composer install --no-progress --no-suggest --prefer-dist
 
+      - name: Archive Build Artifacts
+        run: zip -r build-artifacts.zip ./path/to/build/output
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: build-artifacts.zip
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+          path: ./build-artifacts
+
+      - name: Unzip Build Artifacts
+        run: unzip ./build-artifacts/build-artifacts.zip -d ./build
 
       - name: Deploy to Shared Hosting
         env:
@@ -36,4 +51,4 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           sudo apt-get install -y lftp
-          lftp -e "mirror -R ./ /; quit" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST
+          lftp -e "mirror -R ./build /path/to/your/server; quit" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST
